@@ -15,6 +15,7 @@ module.exports = {
     'plugin:promise/recommended',
     'plugin:unicorn/recommended',
     'prettier',
+    'plugin:react/jsx-runtime',
   ],
   env: {
     node: true,
