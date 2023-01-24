@@ -4,7 +4,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
-import DropDown, { VibeType } from "../components/DropDown";
+import DropDown, { type VibeType } from "../components/DropDown";
 import Footer from "../components/Footer";
 import Github from "../components/GitHub";
 import Header from "../components/Header";
@@ -15,9 +15,9 @@ const Home: NextPage = () => {
   const [loading, setLoading] = useState(false);
   const [bio, setBio] = useState("");
   const [vibe, setVibe] = useState<VibeType>("Professional");
-  const [generatedBios, setGeneratedBios] = useState<String>("");
+  const [generatedBios, setGeneratedBios] = useState<string>("");
 
-  console.log("Streamed response: ", generatedBios);
+  console.log("Streamed response:", generatedBios);
 
   const prompt =
     vibe === "Funny"
@@ -49,7 +49,7 @@ const Home: NextPage = () => {
 
     // This data is a ReadableStream
     const data = response.body;
-    if (!data) {
+    if (data == undefined) {
       return;
     }
 
@@ -108,25 +108,23 @@ const Home: NextPage = () => {
           </div>
           <textarea
             value={bio}
-            onChange={(e) => setBio(e.target.value)}
+            onChange={(e) => { setBio(e.target.value); }}
             rows={4}
             className="w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black my-5"
-            placeholder={
-              "e.g. Senior Developer Advocate @vercel. Tweeting about web development, AI, and React / Next.js. Writing nutlope.substack.com."
-            }
+            placeholder="e.g. Senior Developer Advocate @vercel. Tweeting about web development, AI, and React / Next.js. Writing nutlope.substack.com."
           />
           <div className="flex mb-5 items-center space-x-3">
             <Image src="/2-black.png" width={30} height={30} alt="1 icon" />
             <p className="text-left font-medium">Select your vibe.</p>
           </div>
           <div className="block">
-            <DropDown vibe={vibe} setVibe={(newVibe) => setVibe(newVibe)} />
+            <DropDown vibe={vibe} setVibe={(newVibe) => { setVibe(newVibe); }} />
           </div>
 
           {!loading && (
             <button
               className="bg-black rounded-xl text-white font-medium px-4 py-2 sm:mt-10 mt-8 hover:bg-black/80 w-full"
-              onClick={(e) => generateBio(e)}
+              onClick={async (e) => { await generateBio(e); }}
             >
               Generate your bio &rarr;
             </button>
@@ -158,10 +156,9 @@ const Home: NextPage = () => {
                   </div>
                   <div className="space-y-8 flex flex-col items-center justify-center max-w-xl mx-auto">
                     {generatedBios
-                      .substring(generatedBios.indexOf("1") + 3)
+                      .slice(Math.max(0, generatedBios.indexOf("1") + 3))
                       .split("2.")
-                      .map((generatedBio) => {
-                        return (
+                      .map((generatedBio) => (
                           <div
                             className="bg-white rounded-xl shadow-md p-4 hover:bg-gray-100 transition cursor-copy border"
                             onClick={() => {
@@ -174,8 +171,7 @@ const Home: NextPage = () => {
                           >
                             <p>{generatedBio}</p>
                           </div>
-                        );
-                      })}
+                        ))}
                   </div>
                 </>
               )}
