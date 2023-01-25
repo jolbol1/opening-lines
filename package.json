@@ -9,11 +9,11 @@
     "lint": "npx eslint ."
   },
   "dependencies": {
-    "@headlessui/react": "^1.7.7",
-    "@headlessui/tailwindcss": "^0.1.2",
     "@heroicons/react": "^2.0.13",
+    "@next/font": "^13.1.5",
     "@tailwindcss/forms": "^0.5.3",
     "@vercel/analytics": "^0.1.8",
+    "daisyui": "^2.47.0",
     "eventsource-parser": "^0.0.5",
     "framer-motion": "^8.4.3",
     "next": "latest",
@@ -21,7 +21,8 @@
     "react-dom": "18.2.0",
     "react-hook-form": "^7.42.0",
     "react-hot-toast": "^2.4.0",
-    "react-use-measure": "^2.1.1"
+    "react-use-measure": "^2.1.1",
+    "swr": "^2.0.1"
   },
   "devDependencies": {
     "@types/node": "18.11.3",

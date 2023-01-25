@@ -1,23 +1,17 @@
-import styles from "../styles/loading-dots.module.css";
+import styles from '../styles/loading-dots.module.css'
 
-function LoadingDots({
-  color = "#000",
-  style = "small",
+export function LoadingDots({
+  color = '#000',
+  size = 'small',
 }: {
-  color: string;
-  style: string;
+  color: string
+  size: string
 }) {
   return (
-    <span className={style == "small" ? styles.loading2 : styles.loading}>
+    <span className={size === 'small' ? styles.loading2 : styles.loading}>
       <span style={{ backgroundColor: color }} />
       <span style={{ backgroundColor: color }} />
       <span style={{ backgroundColor: color }} />
     </span>
-  );
+  )
 }
-
-export default LoadingDots;
-
-LoadingDots.defaultProps = {
-  style: "small",
-};

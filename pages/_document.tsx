@@ -1,4 +1,5 @@
-import Document, { Head, Html, Main, NextScript } from "next/document";
+/* eslint-disable */
+import Document, { Head, Html, Main, NextScript } from 'next/document'
 
 class MyDocument extends Document {
   render() {
@@ -8,19 +9,19 @@ class MyDocument extends Document {
           <link rel="icon" href="/favicon.ico" />
           <meta
             name="description"
-            content="Generate your next Twitter bio in seconds."
+            content="Generate your opening line in seconds."
           />
-          <meta property="og:site_name" content="twitterbio.com" />
+          <meta property="og:site_name" content="openinglines.io" />
           <meta
             property="og:description"
-            content="Generate your next Twitter bio in seconds."
+            content="Generate your opening line in seconds."
           />
-          <meta property="og:title" content="Twitter Bio Generator" />
+          <meta property="og:title" content="Tinder Opening Line Generator" />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Twitter Bio Generator" />
+          <meta name="twitter:title" content="Opening Line Generator" />
           <meta
             name="twitter:description"
-            content="Generate your next Twitter bio in seconds."
+            content="Generate your opening line in seconds."
           />
           <meta
             property="og:image"
@@ -36,8 +37,8 @@ class MyDocument extends Document {
           <NextScript />
         </body>
       </Html>
-    );
+    )
   }
 }
 
-export default MyDocument;
+export default MyDocument
