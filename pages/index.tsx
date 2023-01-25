@@ -23,7 +23,6 @@ const Home: NextPage = () => {
   const [name, setName] = useState('')
   const [vibe, setVibe] = useState<string>('Funny')
   const [generatedBios, setGeneratedBios] = useState<string>('')
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
   const { data } = useSWR<PromptData>('/api/prompts', fetcher)
 
   const prompt = () => {
