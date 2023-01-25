@@ -28,7 +28,7 @@ export function Footer() {
           </svg>
         </Link>
         <Link
-          href="https://github.com/jolbol1"
+          href="https://github.com/jolbol1/opening-lines"
           className="group"
           aria-label="Jolbol1 on GitHub"
         >
