@@ -1,0 +1,35 @@
+{
+  "Funny": [
+    "funny messages for a person called %name",
+    "cheesy pickup lines for a person called %name",
+    "jokes for a person called %name",
+    "funny tinder messages for a person called %name",
+    "cheesy opening messages for %name",
+    "funny tinder messages for a person called %name"
+  ],
+  "Flirty": [
+    "flirtatious messages for a person called %name",
+    "flirty messages for a person named %name"
+  ],
+  "Punny": [
+    "puns using the word %name",
+    "messages for tinder using a pun for %name",
+    "opening puns for a dating message addressed to %name",
+    "messages for %name that contain a pun"
+  ],
+  "Casual": [
+    "casual opening messages for a person called %name",
+    "opening tinder messages for a person called %name",
+    "introductory messages for a person named %name"
+  ],
+  "Professional": [
+    "professional messages introducing myself to %name",
+    "professional messages for %name",
+    "opening messages with a professional tone addressed to %name"
+  ],
+  "Poetic": [
+    "Poems for a person called %name. Maximum of 40 words",
+    "tinder poems for a person named %name",
+    "Poems using the name %name"
+  ]
+}
