@@ -108,8 +108,8 @@ const Home: NextPage = () => {
           />
           <div className="flexitems-center space-x-3 mb-5">
             <p className="text-left font-medium text-gray-100">
-              Optional: Write some sentences about them{' '}
-              <span className="text-slate-500">(or copy their bio)</span>
+              Add some context{' '}
+              <span className="text-slate-500">(about you or them)</span>
             </p>
           </div>
           <textarea
@@ -119,7 +119,7 @@ const Home: NextPage = () => {
             }}
             rows={4}
             className="textarea w-full mb-5"
-            placeholder="e.g. Loves dogs, has a photo with their cat, likes star wars"
+            placeholder="e.g. Loves dogs, has a photo with their cat, likes star wars, I like marvel movies"
           />
           <div className="flex mb-5 items-center space-x-3">
             <p className="text-left font-medium text-gray-100">
