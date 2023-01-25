@@ -108,7 +108,7 @@ const Home: NextPage = () => {
           />
           <div className="flexitems-center space-x-3 mb-5">
             <p className="text-left font-medium text-gray-100">
-              Write some sentences about them{' '}
+              Optional: Write some sentences about them{' '}
               <span className="text-slate-500">(or copy their bio)</span>
             </p>
           </div>
