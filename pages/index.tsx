@@ -21,7 +21,7 @@ const Home: NextPage = () => {
   const [loading, setLoading] = useState(false)
   const [bio, setBio] = useState('')
   const [name, setName] = useState('')
-  const [vibe, setVibe] = useState<string>('Funny')
+  const [vibe, setVibe] = useState<string>('Casual')
   const [generatedBios, setGeneratedBios] = useState<string>('')
   const { data } = useSWR<PromptData>('/api/prompts', fetcher)
 
@@ -34,7 +34,7 @@ const Home: NextPage = () => {
       randomPrompt || ''
     }. Clearly label these "1." and "2.". ${
       bio &&
-      `Make sure each generated message is based on this context: ${bio}${
+      `Make sure each generated message uses some of this context: ${bio}${
         bio.slice(-1) === '.' ? '' : '.'
       }`
     }`
@@ -190,7 +190,7 @@ const Home: NextPage = () => {
                             navigator.clipboard
                               .writeText(generatedBio)
                               .then(() => {
-                                toast('Bio copied to clipboard', {
+                                toast('Copied to clipboard', {
                                   icon: '✂️',
                                 })
                                 return true

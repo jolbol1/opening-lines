@@ -7,12 +7,9 @@
     "cheesy opening messages for %name",
     "funny tinder messages for a person called %name"
   ],
-  "Naughty": [
-    "sext messages for a person called %name",
-    "naughty and flirty messages for a person named %name",
-    "horny messages to a person called %name",
-    "sexually suggestive messages for %name",
-    "sexually suggestive tinder opening messages for %name"
+  "Flirty": [
+    "flirtatious messages for a person called %name",
+    "flirty messages for a person named %name"
   ],
   "Punny": [
     "puns using the word %name",
@@ -25,11 +22,10 @@
     "opening tinder messages for a person called %name",
     "introductory messages for a person named %name"
   ],
-  "Insulting": [
-    "insults towards a person called %name",
-    "insulting messages for a person called %name",
-    "crass messages for %name",
-    "roasts for a person called %name"
+  "Professional": [
+    "professional messages introducing myself to %name",
+    "professional messages for %name",
+    "opening messages with a professional tone addressed to %name"
   ],
   "Poetic": [
     "Poems for a person called %name. Maximum of 40 words",
