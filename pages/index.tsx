@@ -169,7 +169,7 @@ const Home: NextPage = () => {
         <hr className="h-px bg-gray-700 border-1 dark:bg-gray-700" />
         <ResizablePanel>
           <AnimatePresence mode="wait">
-            <motion.div className="space-y-10 my-10 w-full sm:w-4/5 mx-auto md:w-3/5 lg:w-1/2">
+            <motion.div className="space-y-10 mt-3 max-w-xl mx-auto p-6">
               {generatedBios && (
                 <>
                   <div>
