@@ -126,19 +126,16 @@ const Home: NextPage = () => {
               Select your vibe
             </p>
           </div>
-          {data ? (
-            <div className="block">
-              <DropDown
-                vibes={(data as object) && Object.keys(data as object)}
-                vibe={vibe}
-                setVibe={(newVibe) => {
-                  setVibe(newVibe)
-                }}
-              />
-            </div>
-          ) : (
-            <p>Loading...</p>
-          )}
+
+          <div className="block">
+            <DropDown
+              vibes={data ? Object.keys(data) : []}
+              vibe={vibe}
+              setVibe={(newVibe) => {
+                setVibe(newVibe)
+              }}
+            />
+          </div>
 
           {!loading && (
             <button
@@ -167,52 +164,54 @@ const Home: NextPage = () => {
           toastOptions={{ duration: 2000 }}
         />
         <hr className="h-px bg-gray-700 border-1 dark:bg-gray-700" />
-        <ResizablePanel>
-          <AnimatePresence mode="wait">
-            <motion.div className="space-y-10 mt-3 max-w-xl mx-auto p-6">
-              {generatedBios && (
-                <>
-                  <div>
-                    <h2 className="sm:text-4xl text-3xl font-bold text-white mx-auto">
-                      Pick your opener!
-                    </h2>
-                  </div>
-                  <div className="chat chat-end bg-slate-800 rounded-xl p-2 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 border border-gray-500">
-                    {generatedBios
-                      .slice(Math.max(0, generatedBios.indexOf('1') + 3))
-                      .split('2.')
-                      .map((generatedBio) => (
-                        // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
-                        <div
-                          className="chat-bubble chat-bubble-info cursor-copy my-3 text-white text-left"
-                          role="cell"
-                          onClick={() => {
-                            navigator.clipboard
-                              .writeText(generatedBio)
-                              .then(() => {
-                                toast('Copied to clipboard', {
-                                  icon: '✂️',
+        {generatedBios && (
+          <>
+            <div>
+              <h2 className="sm:text-4xl text-3xl font-bold text-white mx-auto mt-8">
+                Pick your opener!
+              </h2>
+            </div>
+            <ResizablePanel>
+              <AnimatePresence mode="wait">
+                <motion.div className="space-y-10  max-w-xl mx-auto p-6">
+                  <>
+                    <div className="chat chat-end bg-slate-800 rounded-xl p-2 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 border border-gray-500">
+                      {generatedBios
+                        .slice(Math.max(0, generatedBios.indexOf('1') + 3))
+                        .split('2.')
+                        .map((generatedBio) => (
+                          // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
+                          <div
+                            className="chat-bubble chat-bubble-info cursor-copy my-3 text-white text-left"
+                            role="cell"
+                            onClick={() => {
+                              navigator.clipboard
+                                .writeText(generatedBio)
+                                .then(() => {
+                                  toast('Copied to clipboard', {
+                                    icon: '✂️',
+                                  })
+                                  return true
                                 })
-                                return true
-                              })
-                              .catch(() => {
-                                toast('Error copying to clipboard', {
-                                  icon: '✂️',
+                                .catch(() => {
+                                  toast('Error copying to clipboard', {
+                                    icon: '✂️',
+                                  })
+                                  return false
                                 })
-                                return false
-                              })
-                          }}
-                          key={generatedBio}
-                        >
-                          <p>{generatedBio}</p>
-                        </div>
-                      ))}
-                  </div>
-                </>
-              )}
-            </motion.div>
-          </AnimatePresence>
-        </ResizablePanel>
+                            }}
+                            key={generatedBio}
+                          >
+                            <p>{generatedBio}</p>
+                          </div>
+                        ))}
+                    </div>
+                  </>
+                </motion.div>
+              </AnimatePresence>
+            </ResizablePanel>
+          </>
+        )}
       </div>
       <Footer />
     </div>
