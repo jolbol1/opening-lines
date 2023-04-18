@@ -15,7 +15,7 @@
     "@vercel/analytics": "^0.1.8",
     "daisyui": "^2.47.0",
     "eventsource-parser": "^0.0.5",
-    "framer-motion": "^8.4.3",
+    "framer-motion": "^10.0.0",
     "next": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0",
