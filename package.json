@@ -14,7 +14,7 @@
     "@tailwindcss/forms": "^0.5.3",
     "@vercel/analytics": "^0.1.8",
     "daisyui": "^2.47.0",
-    "eventsource-parser": "^0.0.5",
+    "eventsource-parser": "^1.0.0",
     "framer-motion": "^8.4.3",
     "next": "latest",
     "react": "18.2.0",
